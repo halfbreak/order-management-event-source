@@ -1,0 +1,4 @@
+rootProject.name = 'orders-event-source'
+include 'model'
+include 'actors'
+include 'launcher'

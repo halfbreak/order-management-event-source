@@ -1,0 +1,5 @@
+dependencies {
+    compile group: 'com.typesafe.akka', name: 'akka-actor_2.12'
+    compile project(":model")
+    compile group: 'org.slf4j', name: 'slf4j-api'
+}

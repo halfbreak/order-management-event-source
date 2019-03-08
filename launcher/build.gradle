@@ -1,0 +1,6 @@
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-webflux')
+    compile group: 'com.typesafe.akka', name: 'akka-actor_2.12'
+    compile project(":actors")
+    compile project(":model")
+}
