@@ -5,6 +5,7 @@ import akka.actor.Props;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pt.hlbk.orders.Order;
+import pt.hlbk.orders.events.OrderTrackingStarted;
 
 public class OrderManager extends AbstractActor {
 
@@ -19,6 +20,7 @@ public class OrderManager extends AbstractActor {
         return receiveBuilder()
                 .match(Order.class, order -> {
                     LOGGER.info(getSelf() + ": Received " + order);
+                    getSender().tell(new OrderTrackingStarted(order.getOrderId()), getSelf());
                 })
                 .build();
     }
